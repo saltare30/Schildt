@@ -1,3 +1,5 @@
+package Generics;
+
 public class Stats<T extends Number> {
     T[] nums;
     Stats(T[] o){
@@ -13,9 +15,6 @@ public class Stats<T extends Number> {
     }
 
     boolean sameAVF(Stats<?> ob){
-        if (average() == ob.average()) return true;
-
-        return false;
-
+        return average() == ob.average();
     }
 }
