@@ -9,17 +9,23 @@ public class SchildPro {
 
     static public void main(String[] args){
 
-        Integer inums[] = {3, 6, 2, 8, 6 };
-        Character chs [] = { 'b' , 'r' , 'p' , 'w' } ;
+        Gen<Integer> iOb    = new Gen<Integer>(88);
+        Gen2<Integer> iOb2  = new Gen2<Integer>(99);
+        Gen2<String> strOb2 = new Gen2<String>("Tecт обобщений");
 
-        MyClass<Integer> iob = new MyClass<>(inums);
-        MyClass<Character> соЬ = new MyClass<>(chs);
-        System.out.println(iob.min());
-        System.out.println(iob.max());
-        System.out.println(соЬ.min());
-        System.out.println(соЬ.max());
+        if(iOb2 instanceof Gen2<?>) System.out.println("Oбъeкт iOb2 является экземпляром класса Gen2");
+        if(iOb2 instanceof Gen<?>)  System.out.println("Oбъeкт iOb2 является экземпляром класса Gen");
+        System.out.println();
 
 
+        // проверить, является ли strOb2 объектом класса Gen2
+        if(strOb2 instanceof Gen2<?>) System.out.println("Oбъeкт strOb2 является экземпляром класса Gen2");
+        // проверить, является ли strOb2 объектом класса Gen
+        if(strOb2 instanceof Gen<?>) System.out.println("Oбъeкт strOb2 является экземпляром класса Gen");
+        System.out.println();
+
+        if(iOb instanceof Gen2<?>) System.out.println("Oбъeкт iOb является экземпляром класса Gen2");
+        if(iOb instanceof Gen<?>) System.out.println("Oбъeкт iOb является экземпляром класса Gen");
         /*
         Integer in[] = {1,2,3,4,5,6,7,8,9,10};
         Double dob[] = {1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2.0};
