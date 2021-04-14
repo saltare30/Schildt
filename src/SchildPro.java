@@ -1,5 +1,7 @@
 import Generics.*;
 import lambda.MyNumber;
+import lambda.SomeFunc;
+import lambda.StringFunc;
 
 public class SchildPro {
     static public <T extends Comparable<T>, V extends T> boolean isIn(T x, V[] y){
@@ -10,6 +12,31 @@ public class SchildPro {
     }
 
     static public void main(String[] args){
+
+
+        SomeFunc<Integer> ifunc = o -> 123;
+        SomeFunc<String> sfunc = o -> "Это строка";
+        SomeFunc<Double> dfunc = o -> {
+            return o;
+        };
+
+        System.out.println(ifunc.func(1));
+        System.out.println(sfunc.func(""));
+        System.out.println(dfunc.func(1.3));
+
+
+        /*
+        StringFunc str = str1 -> {
+            String temp = "";
+            for (int i = str1.length()-1; i >= 0 ; i--) {
+                temp+=str1.charAt(i);
+            }
+            return temp;
+        };
+
+        System.out.println(str.func("Привет"));
+
+
 
         MyNumber factorial = (n) -> {
             int result=1;
